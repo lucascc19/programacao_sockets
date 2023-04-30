@@ -28,11 +28,11 @@ def main():
         
         #Convertendo os dados recebido em um número inteiro 
         numero = int(dados.decode())
+
         print("Número recebido: ",numero)
-        tamanho = len(numero)
         
-        if tamanho > 10:
-            mensagem = ''.join(random.choices('abcdefghijklmnopqrstuvwxyz',tamanho))
+        if len(str(numero)) > 10:
+            mensagem = ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', k = len(str(numero))))
             cliente.send(mensagem.encode())
         else:
             if numero % 2 == 0:
@@ -46,4 +46,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
