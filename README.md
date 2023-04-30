@@ -1,2 +1,1 @@
-# programaca_sockets
-Trabalho Prático - Programação de Sockets
+# Trabalho Prático - Programação de Sockets
