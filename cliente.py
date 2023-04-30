@@ -16,21 +16,22 @@ def main():
 
       numero = random.randint(1, 10**30)
 
-      numero_convertido = str(numero)
-
       #Envia o número para o servidor
-      cliente.send(numero_convertido.encode())
+      cliente.send(str(numero).encode())
 
+      #Recebe os dados do servidor
       dados = cliente.recv(BUFFER_SIZE)
 
-      resposta = dados.decode() + 'FIM'
+      #Converte os dados em uma string e adiciona a mensagem FIM
+      resposta = dados.decode() + '\nFIM\n'
 
       print('Resposta recebida: ', resposta)
 
       cliente.close()
 
+      #Envia o número a cada 10 segundos
       time.sleep(10)
 
 
 if __name__ == '__main__':
-    main()    
+  main()    
