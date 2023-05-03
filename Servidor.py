@@ -21,6 +21,7 @@ def main():
     while True:
         #Esperando conexão
         cliente,endereco = servidor.accept()
+        
         print("Conectado em ",endereco)
         
         #Recebendo os dados enviados pelo cliente
@@ -32,7 +33,7 @@ def main():
         print("Número recebido: ",numero)
         
         if len(str(numero)) > 10:
-            mensagem = ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', K = len(str(numero))))
+            mensagem = ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', tamanho = len(str(numero))))
             cliente.send(mensagem.encode())
         else:
             if numero % 2 == 0:
