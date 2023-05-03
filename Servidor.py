@@ -32,7 +32,7 @@ def main():
         print("Número recebido: ",numero)
         
         if len(str(numero)) > 10:
-            mensagem = ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', k = len(str(numero))))
+            mensagem = ''.join(random.choices('abcdefghijklmnopqrstuvwxyz', K = len(str(numero))))
             cliente.send(mensagem.encode())
         else:
             if numero % 2 == 0:
